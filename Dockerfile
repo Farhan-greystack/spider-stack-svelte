@@ -33,7 +33,4 @@ COPY --from=prerelease /app/package.json .
 
 # run the app
 USER bun
-ENV PORT=3000
-ENV HOST=0.0.0.0
-EXPOSE 3000/tcp
 ENTRYPOINT [ "bun", "run", "build/index.js" ]
