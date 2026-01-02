@@ -45,17 +45,17 @@
             -ml-0: Removes default gap spacing 
             h-[600px] or h-[80vh]: Sets the Hero height
         -->
-		<Carousel.Content class="-ml-0">
+		<Carousel.Content class="ml-0">
 			{#each slides as slide}
 				<!-- basis-full: Ensures one slide takes up 100% width -->
 				<Carousel.Item class="basis-full pl-0">
-					<div class="relative h-[600px] w-full overflow-hidden">
+					<div class="relative h-150 w-full overflow-hidden">
 						<!-- Background Image -->
 						<img src={slide.image} alt={slide.title} class="h-full w-full object-cover" />
 
 						<!-- Dark Gradient Overlay (Improves text readability) -->
 						<div
-							class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"
+							class="absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-transparent"
 						></div>
 
 						<!-- Text Content -->
