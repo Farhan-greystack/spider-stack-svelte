@@ -55,7 +55,7 @@
 					<div
 						class={cn(
 							'relative w-full overflow-hidden transition-[height] duration-500 ease-in-out',
-							isFullScreen ? 'h-dvh' : 'h-[600px]'
+							isFullScreen ? 'h-dvh' : 'h-150'
 						)}
 					>
 						<!-- Background Image -->
@@ -63,7 +63,7 @@
 
 						<!-- Dark Gradient Overlay -->
 						<div
-							class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"
+							class="absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-transparent"
 						></div>
 
 						<!-- Text Content -->
