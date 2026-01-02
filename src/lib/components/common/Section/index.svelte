@@ -1,7 +1,8 @@
 <script lang="ts">
-    let { settings, children } = $props();
+	import clsx from 'clsx';
+	let { settings, children } = $props();
 </script>
 
-<section class="container">
-    {@render children()}
+<section class={clsx(settings?.theme, 'bg-background text-foreground')}>
+	{@render children()}
 </section>

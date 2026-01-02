@@ -4,22 +4,30 @@
 		{
 			type: 'hero',
 			content: 'This is a hero block',
-			settings: {}
+			settings: {
+				theme: 'light'
+			}
 		},
 		{
 			type: 'rich-text',
 			content: 'This is a hero block',
-			settings: {}
+			settings: {
+				theme: 'dark'
+			}
 		},
 		{
 			type: 'image',
 			content: 'This is a hero block',
-			settings: {}
+			settings: {
+				theme: 'light'
+			}
 		},
 		{
 			type: 'video',
 			content: 'This is a hero block',
-			settings: {}
+			settings: {
+				theme: 'light'
+			}
 		}
 	];
 </script>
