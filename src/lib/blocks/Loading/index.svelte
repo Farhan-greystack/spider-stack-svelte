@@ -17,7 +17,7 @@
 	<div
 		class={cn(
 			'relative w-full animate-pulse overflow-hidden bg-muted',
-			'dark flex items-center justify-center bg-background',
+			'flex items-center justify-center',
 			className || 'h-dvh' // Default to full screen if no class provided
 		)}
 	>
