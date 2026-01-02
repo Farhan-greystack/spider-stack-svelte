@@ -1,8 +1,12 @@
 <script lang="ts">
 	import * as Carousel from '$lib/components/ui/carousel/index';
 	import { Button } from '$lib/components/ui/button/index';
+	import { cn } from '$lib/utils'; // Standard shadcn utility
 
-	// 1. Define distinct slide content (Mock Data)
+	// Controls whether the hero takes up the full viewport or a fixed height
+	let { isFullScreen = true } = $props();
+
+	// Mock Data
 	const slides = [
 		{
 			id: 1,
@@ -29,33 +33,37 @@
 			cta: 'Contact Sales'
 		}
 	];
-
 </script>
 
-<!-- Wrapper: Full width, relative for button positioning -->
 <div class="relative w-full">
 	<Carousel.Root
 		opts={{
 			align: 'start',
-			loop: true // Infinite loop
+			loop: true
 		}}
 		class="w-full"
 	>
-		<!-- 
-            -ml-0: Removes default gap spacing 
-            h-[600px] or h-[80vh]: Sets the Hero height
-        -->
 		<Carousel.Content class="ml-0">
 			{#each slides as slide}
-				<!-- basis-full: Ensures one slide takes up 100% width -->
 				<Carousel.Item class="basis-full pl-0">
-					<div class="relative h-150 w-full overflow-hidden">
+					<!-- 
+						Dynamic Height Logic:
+						1. h-dvh: 100% of dynamic viewport height (Full Screen)
+						2. h-[600px]: Fixed height (Standard Hero)
+						3. transition-all: Animates the change if the variable toggles live
+					-->
+					<div
+						class={cn(
+							'relative w-full overflow-hidden transition-[height] duration-500 ease-in-out',
+							isFullScreen ? 'h-dvh' : 'h-[600px]'
+						)}
+					>
 						<!-- Background Image -->
 						<img src={slide.image} alt={slide.title} class="h-full w-full object-cover" />
 
-						<!-- Dark Gradient Overlay (Improves text readability) -->
+						<!-- Dark Gradient Overlay -->
 						<div
-							class="absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-transparent"
+							class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"
 						></div>
 
 						<!-- Text Content -->
@@ -86,7 +94,7 @@
 			{/each}
 		</Carousel.Content>
 
-		<!-- Navigation Controls (Floating) -->
+		<!-- Navigation Controls -->
 		<Carousel.Previous
 			class="absolute top-1/2 left-8 -translate-y-1/2 border-white/50 bg-transparent text-white hover:border-white hover:bg-white/20"
 		/>
