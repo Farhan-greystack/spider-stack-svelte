@@ -1,1 +1,1 @@
-Hero
+<p>Hero</p>
