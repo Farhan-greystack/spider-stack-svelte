@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Section from '$lib/components/common/Section';
 	import Loading from '$lib/blocks/Loading';
-	import { blocks } from './blocks';
+	import blocks from './blocks';
 
 	let { block } = $props();
 	let lazyBlock = $derived(blocks[block.type]);
