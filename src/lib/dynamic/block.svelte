@@ -10,7 +10,7 @@
 {#if lazyBlock}
 	<Section settings={block.settings}>
 		{#await lazyBlock()}
-			<Loading />
+			<Loading variant={block.type} />
 		{:then { default: Block }}
 			<Block {block} />
 		{/await}
