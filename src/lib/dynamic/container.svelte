@@ -1,6 +1,5 @@
 <script lang="ts">
 	import Block from './block.svelte';
-	import Section from '$lib/components/common/Section';
 	const blocks = [
 		{
 			type: 'hero',
@@ -25,8 +24,8 @@
 	];
 </script>
 
-{#each blocks as block}
-	<Section settings={block.settings}>
+<div class="flex flex-col">
+	{#each blocks as block}
 		<Block {block} />
-	</Section>
-{/each}
+	{/each}
+</div>
