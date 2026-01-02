@@ -2,15 +2,14 @@
 	import Section from '$lib/components/common/Section';
 	import Loading from '$lib/blocks/Loading';
 
-	let { block } = $props();
-
 	const blocks: Record<string, () => Promise<any>> = {
-		hero: () => import('$lib/blocks/Hero'),
 		'rich-text': () => import('$lib/blocks/RichText'),
-		video: () => import('$lib/blocks/Video'),
-		image: () => import('$lib/blocks/Image')
+		hero: () => import('$lib/blocks/Hero'),
+		image: () => import('$lib/blocks/Image'),
+		video: () => import('$lib/blocks/Video')
 	};
 
+	let { block } = $props();
 	let lazyBlock = $derived(blocks[block.type]);
 </script>
 
